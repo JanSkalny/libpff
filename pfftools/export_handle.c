@@ -4946,7 +4946,7 @@ int export_handle_export_message_header_to_item_file(
      item_file_t *item_file,
      libcerror_error_t **error )
 {
-	mapi_property_definitions_t property_definitions[ 23 ] = {
+	mapi_property_definitions_t property_definitions[ 24 ] = {
 		{ _SYSTEM_STRING( "Client submit time:\t\t\t" ), LIBPFF_ENTRY_TYPE_MESSAGE_CLIENT_SUBMIT_TIME, LIBPFF_VALUE_TYPE_FILETIME, 0, NULL },
 		{ _SYSTEM_STRING( "Delivery time:\t\t\t\t" ), LIBPFF_ENTRY_TYPE_MESSAGE_DELIVERY_TIME, LIBPFF_VALUE_TYPE_FILETIME, 0, NULL },
 		{ _SYSTEM_STRING( "Creation time:\t\t\t\t" ), LIBPFF_ENTRY_TYPE_MESSAGE_CREATION_TIME, LIBPFF_VALUE_TYPE_FILETIME, 0, NULL },
@@ -4960,6 +4960,7 @@ int export_handle_export_message_header_to_item_file(
 		{ _SYSTEM_STRING( "Sender email address:\t\t\t" ), LIBPFF_ENTRY_TYPE_MESSAGE_SENDER_EMAIL_ADDRESS, LIBPFF_VALUE_TYPE_STRING, 0, NULL },
 		{ _SYSTEM_STRING( "Sent representing name:\t\t\t" ), LIBPFF_ENTRY_TYPE_MESSAGE_SENT_REPRESENTING_NAME, LIBPFF_VALUE_TYPE_STRING, 0, NULL },
 		{ _SYSTEM_STRING( "Sent representing email address:\t" ), LIBPFF_ENTRY_TYPE_MESSAGE_SENT_REPRESENTING_EMAIL_ADDRESS, LIBPFF_VALUE_TYPE_STRING, 0, NULL },
+		{ _SYSTEM_STRING( "Primary send account:\t\t\t" ), LIBPFF_ENTRY_TYPE_MESSAGE_PRIMARY_SEND_ACCOUNT, LIBPFF_VALUE_TYPE_STRING, 0, NULL },
 		{ _SYSTEM_STRING( "Importance:\t\t\t\t" ), LIBPFF_ENTRY_TYPE_MESSAGE_IMPORTANCE, LIBPFF_VALUE_TYPE_INTEGER_32BIT_SIGNED, 0, &export_handle_export_message_importance_to_item_file },
 		{ _SYSTEM_STRING( "Priority:\t\t\t\t" ), LIBPFF_ENTRY_TYPE_MESSAGE_PRIORITY, LIBPFF_VALUE_TYPE_INTEGER_32BIT_SIGNED, 0, &export_handle_export_message_priority_to_item_file },
 		{ _SYSTEM_STRING( "Sensitivity:\t\t\t\t" ), LIBPFF_ENTRY_TYPE_MESSAGE_SENSITIVITY, LIBPFF_VALUE_TYPE_INTEGER_32BIT_SIGNED, 0, &export_handle_export_message_sensitivity_to_item_file },
@@ -4980,7 +4981,7 @@ int export_handle_export_message_header_to_item_file(
 	     message,
 	     0,
 	     (mapi_property_definitions_t *) &property_definitions,
-	     23,
+	     24,
 	     error ) != 1 )
 	{
 		libcerror_error_set(
